@@ -17,13 +17,6 @@
   
   <h2>How to run the app locally?</h2>
 
-
-```
-$ git clone  https://github.com/chhakuli123/ATTIREX-FASHION.git
-$ cd attirex-fashion
-$ npm install
-$ npm start
-```
 <h2> Screens in this project</h2>
 
 - 🏠 Landing Page
@@ -55,7 +48,6 @@ ATTIREX is designed to be responsive and accessible on various devices.
 - The website will automatically adapt to the screen size and display properly on your mobile device.
 - Navigate through the different pages and explore the features of ATTIREX.
 
-https://github.com/chhakuli123/ATTIREX-FASHION/assets/103095813/9eea0830-7099-4876-b54e-e9dec6373348
 
 
 

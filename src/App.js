@@ -47,11 +47,14 @@ function App() {
         <Route path="/signup" element={<SignupForm />} />
         <Route path="/login" element={<LoginForm />} />
 
+        {/* Guest users can access cart, wishlist, and checkout */}
+        <Route path="/wishlist" element={<WishlistPage />} />
+        <Route path="/cart" element={<CartPage />} />
+        <Route path="/checkout" element={<CheckoutPage />} />
+
+        {/* Protected routes - require authentication */}
         <Route path="/" element={<PrivateRoute />}>
           <Route path="/profile" element={<UserProfile />} />
-          <Route path="/wishlist" element={<WishlistPage />} />
-          <Route path="/cart" element={<CartPage />} />
-          <Route path="/checkout" element={<CheckoutPage />} />
         </Route>
         <Route path="*" element={<Error />} />
       </Routes>

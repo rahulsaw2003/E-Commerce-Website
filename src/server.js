@@ -85,6 +85,10 @@ export function makeServer({ environment = "development" } = {}) {
         "/user/wishlist/:productId",
         removeItemFromWishlistHandler.bind(this)
       );
+
+      // Allow external API calls to pass through
+      this.passthrough("https://api.postalpincode.in/**");
+      this.passthrough("https://nominatim.openstreetmap.org/**");
     },
   });
 }

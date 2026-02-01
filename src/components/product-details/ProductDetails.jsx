@@ -39,21 +39,13 @@ const ProductDetails = () => {
     cart && cart.find((cartProduct) => cartProduct._id === product._id);
 
   const handleAddToWishlist = () => {
-    if (isLoggedIn) {
-      addToWishlistHandler(product);
-      toast.success(`${product.name} added to wishlist`);
-    } else {
-      navigate("/login");
-    }
+    addToWishlistHandler(product);
+    toast.success(`${product.name} added to wishlist`);
   };
 
   const handleAddToCart = () => {
-    if (isLoggedIn) {
-      addToCartHandler(product);
-      toast.success(`${product.name} added to cart`);
-    } else {
-      navigate("/login");
-    }
+    addToCartHandler(product);
+    toast.success(`${product.name} added to cart`);
   };
 
   return (
@@ -107,9 +99,8 @@ const ProductDetails = () => {
               </button>
             ) : (
               <button
-                className={`product-detail-add-to-cart-btn${
-                  product.isOutOfStock ? " add-to-cart-btn outofstock" : ""
-                }`}
+                className={`product-detail-add-to-cart-btn${product.isOutOfStock ? " add-to-cart-btn outofstock" : ""
+                  }`}
                 onClick={handleAddToCart}
                 disabled={product.isOutOfStock}
               >
@@ -131,14 +122,14 @@ const ProductDetails = () => {
                 className="product-detail-add-to-whishlist-btn"
                 onClick={() => navigate("/wishlist")}
               >
-              <FavoriteIcon color="error"/>  Go To Wishlist
+                <FavoriteIcon color="error" />  Go To Wishlist
               </button>
             ) : (
               <button
                 className="product-detail-add-to-whishlist-btn"
                 onClick={handleAddToWishlist}
               >
-               <FavoriteBorderOutlinedIcon/> Add To Wishlist
+                <FavoriteBorderOutlinedIcon /> Add To Wishlist
               </button>
             )}
           </div>

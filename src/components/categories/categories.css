@@ -1,9 +1,14 @@
 .categories-container h2 {
-  font-size: 2.5rem;
-  font-weight: bold;
+  font-size: 2.8rem;
+  font-weight: 800;
   margin-top: 2.5rem;
   text-align: center;
-  color: var(--deep-blue);
+  font-family: var(--font-heading);
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 1px;
 }
 
 .categories-block-note {
@@ -24,12 +29,16 @@
   grid-column: 1 / span 1;
   height: 31.8rem;
   position: relative;
-  transition: transform 0.2s ease-in-out;
+  transition: all var(--transition-base);
   transform-origin: center;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
 }
 
 .big-box:hover {
-  transform: scale(1.03);
+  transform: scale(1.02);
+  box-shadow: var(--shadow-xl);
 }
 
 .big-box img {
@@ -58,20 +67,22 @@
 }
 
 .category-overlay a {
-  background-color: var(--white);
+  background: var(--white);
   color: var(--deep-blue);
-  padding: 0.6rem 1.2rem;
+  padding: 0.7rem 1.5rem;
   text-transform: uppercase;
   font-weight: 700;
-  border-radius: 1.2rem;
+  border-radius: var(--radius-full);
   text-decoration: none;
-  transition: background-color 0.3s ease;
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-md);
 }
 
 .category-overlay a:hover {
-  background-color: var(--deep-blue);
+  background: var(--primary-gradient);
   color: var(--white);
-  transform: scale(1.1);
+  transform: scale(1.05) translateY(-2px);
+  box-shadow: var(--shadow-lg);
 }
 
 .small-box-grid {
@@ -83,12 +94,16 @@
 .small-box {
   height: 15.6rem;
   position: relative;
-  transition: transform 0.2s ease-in-out;
+  transition: all var(--transition-base);
   transform-origin: center;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
 }
 
 .small-box:hover {
-  transform: scale(1.03);
+  transform: scale(1.02);
+  box-shadow: var(--shadow-xl);
 }
 
 .small-box img {
@@ -96,6 +111,7 @@
   height: 100%;
   object-fit: cover;
 }
+
 @media screen and (max-width: 767px) {
   .categories-container h2 {
     font-size: 1.5rem;
@@ -105,6 +121,7 @@
   .categories-block-note {
     font-size: 0.9rem;
   }
+
   .categories {
     margin: 0.5rem 2rem;
   }

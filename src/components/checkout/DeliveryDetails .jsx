@@ -3,17 +3,16 @@ import React from "react";
 const DeliveryDetails = ({ selectedAddress }) => {
   return (
     <>
-      <h3 className="section-title">Deliver To</h3>
+      <h3 className="section-title delivery-title">Deliver To</h3>
       <div className="delivery-container">
         <div className="deliver-to">
-          <p>
-            <span className="recipient-name">{selectedAddress.name}</span>
-            <br />
-            {selectedAddress.address} <br />
-            <p className="phone-number">
-              Phone Number: {selectedAddress.phoneNumber}
-            </p>
-          </p>
+          <div className="recipient-name">{selectedAddress.name}</div>
+          <div className="delivery-address">
+            {selectedAddress.address}
+          </div>
+          <div className="phone-number">
+            <span className="phone-label">Phone:</span> {selectedAddress.phoneNumber}
+          </div>
         </div>
       </div>
     </>

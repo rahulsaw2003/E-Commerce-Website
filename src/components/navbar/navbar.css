@@ -1,12 +1,13 @@
 nav {
   height: 4rem;
   padding: 0 1.25rem;
-  box-shadow: 0 0 0.625rem rgb(116, 114, 114);
+  box-shadow: var(--shadow-md);
   top: 0;
   z-index: 6;
   position: sticky;
   background-color: var(--white);
   cursor: pointer;
+  transition: box-shadow var(--transition-base);
 }
 
 .nav-container {
@@ -24,10 +25,15 @@ nav {
 .nav-logo {
   font-size: 2rem;
   font-weight: 700;
-  color: var(--deep-blue);
+  font-family: var(--font-heading);
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   text-transform: uppercase;
   text-decoration: none;
   margin-right: 1.25rem;
+  letter-spacing: 1px;
 }
 
 .nav-menu {
@@ -51,6 +57,7 @@ nav {
 .nav-home-btn {
   font-size: 1.3rem;
 }
+
 .nav-buy-now {
   font-size: 1.3rem;
   margin-left: 0.4rem;
@@ -64,12 +71,20 @@ nav {
 
 .nav-search-form {
   background-color: var(--search-input);
-  border-radius: 0.3rem;
+  border-radius: var(--radius-md);
   display: flex;
   align-items: center;
   height: 1.5rem;
   padding: 0.5rem;
   width: 21rem;
+  border: 2px solid transparent;
+  transition: all var(--transition-base);
+}
+
+.nav-search-form:focus-within {
+  border-color: #667eea;
+  box-shadow: var(--shadow-glow);
+  background-color: var(--white);
 }
 
 .nav-search-form input {
@@ -91,11 +106,14 @@ nav {
   width: 1.3rem;
   height: 1.2rem;
   border-radius: 50%;
-  background-color: var(--danger);
+  background: var(--accent-gradient);
   color: var(--white);
-  font-size: 1rem;
-  font-weight: bold;
+  font-size: 0.85rem;
+  font-weight: 700;
+  box-shadow: var(--shadow-md);
+  animation: pulse 2s infinite;
 }
+
 .badge-wishlist {
   position: absolute;
   top: -0.5rem;
@@ -106,10 +124,12 @@ nav {
   width: 1.3rem;
   height: 1.2rem;
   border-radius: 50%;
-  background-color: var(--danger);
+  background: var(--accent-gradient);
   color: var(--white);
-  font-size: 1rem;
-  font-weight: bold;
+  font-size: 0.85rem;
+  font-weight: 700;
+  box-shadow: var(--shadow-md);
+  animation: pulse 2s infinite;
 }
 
 .nav-icons-container {
@@ -119,21 +139,26 @@ nav {
 .nav-icons {
   margin-left: 0.9rem;
   color: var(--deep-blue);
+  transition: all var(--transition-base);
 }
 
 .nav-icons .nav-icon {
   font-size: 2rem;
 }
+
 .nav-search-form .nav-icon {
   font-size: 2rem;
   margin-bottom: 0;
+  transition: color var(--transition-base);
 }
+
 .nav-search-form .nav-icon:hover {
-  color: var(--bright-blue);
+  color: #667eea;
 }
 
 .nav-icons:hover {
-  color: var(--bright-blue);
+  color: #667eea;
+  transform: translateY(-2px);
 }
 
 .mobile-search-form {
@@ -151,12 +176,15 @@ nav {
     font-size: 1.7rem;
     margin-left: 0.3rem;
   }
+
   .nav-menu {
     display: none;
   }
+
   .nav-icons-container {
     margin-right: 0.5rem;
   }
+
   .nav-icons {
     margin-left: 0.5rem;
   }
@@ -164,9 +192,11 @@ nav {
   .nav-icons .nav-icon {
     font-size: 1.8rem;
   }
+
   .badge-wishlist {
     right: 1.7rem;
   }
+
   .nav-search-form {
     display: none;
   }
@@ -201,6 +231,7 @@ nav {
     color: var(--bright-blue);
   }
 }
+
 @media (max-width: 1023px) and (min-width: 768px) {
   .nav-menu {
     display: none;

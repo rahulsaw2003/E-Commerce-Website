@@ -7,11 +7,22 @@ const OrderDetails = ({ cart, quantity }) => {
       <div className="order-details-container">
         <div className="ordered-items">
           {cart.map((item) => (
-            <div className="order-items" key={item.id}>
-              <div className="item-order-details">
-                <p className="item-name">Name: {item.name}</p>
-                <p className="item-quantity">Quantity: {quantity}</p>
-                <p className="item-price">Price: {item.price}</p>
+            <div className="order-item-card" key={item.id}>
+              <div className="order-item-image">
+                <img src={item.img} alt={item.name} />
+              </div>
+              <div className="order-item-info">
+                <h3 className="order-item-name">{item.name}</h3>
+                <div className="order-item-details">
+                  <div className="detail-row">
+                    <span className="detail-label">Quantity</span>
+                    <span className="detail-value">{item.quantity}</span>
+                  </div>
+                  <div className="detail-row">
+                    <span className="detail-label">Price</span>
+                    <span className="detail-value">₹{item.price}</span>
+                  </div>
+                </div>
               </div>
             </div>
           ))}

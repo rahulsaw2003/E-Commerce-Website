@@ -1,119 +1,155 @@
+/* Desktop Footer - Minimal & Modern */
 .desk-footer {
-  background-color: var(--deep-blue);
+  background: linear-gradient(135deg, #121932 0%, #1c263f 100%);
   color: var(--white);
-  padding: 3.125rem 0;
+  padding: 2rem 0;
   margin-top: auto;
+  border-top: 1px solid rgba(102, 126, 234, 0.2);
 }
 
 .footer-content {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   max-width: 75rem;
   margin: 0 auto;
+  padding: 0 2rem;
 }
 
-.footer-section {
-  width: 25%;
-  padding: 0 1.25rem;
+.footer-brand {
+  flex: 1;
 }
 
-.footer-heading {
-  font-size: 1.5rem;
-  margin-bottom: 1.25rem;
-}
-
-.contact-list,
-.links-list {
-  list-style: none;
+.footer-logo {
+  font-size: 1.8rem;
+  font-weight: 800;
+  font-family: var(--font-heading);
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   margin: 0;
-  padding: 0;
+  letter-spacing: 1px;
 }
 
-.contact-list li,
-.links-list li {
-  margin-bottom: 0.625rem;
+.footer-tagline {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0.25rem 0 0 0;
+  font-style: italic;
 }
 
-.links-list a {
-  color: var(--white);
-  text-decoration: none;
-}
-.links-list a:hover {
-  color: var(--bright-blue);
-  text-decoration: none;
-  text-decoration-color: var(--bright-blue);
-}
-
-.social-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.footer-links {
   display: flex;
-  align-items: center;
+  gap: 2rem;
+  flex: 1;
   justify-content: center;
 }
 
-.social-list li {
-  margin: 0.5rem;
+.footer-links a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all var(--transition-base);
+  position: relative;
 }
 
-.social-list a {
+.footer-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary-gradient);
+  transition: width var(--transition-base);
+}
+
+.footer-links a:hover {
   color: var(--white);
-  font-size: 1.2rem;
 }
 
-.social-list a:hover {
-  color: var(--bright-blue);
+.footer-links a:hover::after {
+  width: 100%;
 }
 
-.desk-footer-bottom {
-  max-width: 75rem;
-  margin: 1.25rem auto 0;
-  text-align: center;
-  font-size: 1rem;
+.footer-copyright {
+  flex: 1;
+  text-align: right;
 }
 
-/* //----------------------------Mobile footer css---------------------------------// */
+.footer-copyright p {
+  font-size: 0.825rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0;
+}
+
+/* Mobile Footer - Minimal & Clean */
 .mobile-footer {
   display: none;
-  align-items: center;
   flex-direction: column;
-  justify-content: center;
-  padding: 2rem;
+  align-items: center;
+  padding: 1.5rem;
   color: white;
-  background-color: var(--deep-blue);
+  background: linear-gradient(135deg, #121932 0%, #1c263f 100%);
   margin-top: auto;
+  border-top: 1px solid rgba(102, 126, 234, 0.2);
+  text-align: center;
 }
 
-.footer-header {
-  font-size: 1.2rem;
-  font-weight: 500;
+.mobile-footer-brand {
+  margin-bottom: 1rem;
 }
 
-.social-icons-container {
-  margin: 1rem 0px;
+.mobile-footer-logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  font-family: var(--font-heading);
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.mobile-footer-tagline {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0.25rem 0 0 0;
+  font-style: italic;
+}
+
+.mobile-footer-links {
   display: flex;
-  gap: 15px;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
 }
-.social-icons .social-icon {
-  font-size: 1.6rem;
+
+.mobile-footer-links a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color var(--transition-base);
+}
+
+.mobile-footer-links a:hover {
   color: var(--white);
 }
-.social-icons .social-icon:hover {
-  color: var(--bright-blue);
-}
-.footer-bottom {
-  font-size: 0.7rem;
-  margin-bottom: 1.5rem;
-}
-.footer-logo {
-  font-weight: 900;
+
+.mobile-footer-copyright {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0;
 }
 
 @media screen and (max-width: 768px) {
   .desk-footer {
     display: none;
   }
+
   .mobile-footer {
     display: flex;
   }

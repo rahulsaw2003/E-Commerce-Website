@@ -18,7 +18,7 @@ const Navbar = () => {
   const { wishlist } = wishlistState;
   const { cartState } = useCart();
   const { cart } = cartState;
-  const { isLoggedIn } = useAuth(); 
+  const { isLoggedIn } = useAuth();
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -65,7 +65,7 @@ const Navbar = () => {
             </span>
             <span className="nav-icons" onClick={() => navigate("/wishlist")}>
               <FavoriteBorderOutlinedIcon className="nav-icon" />
-              {wishlist.length > 0 && isLoggedIn && (
+              {wishlist.length > 0 && (
                 <span className="badge-wishlist">{wishlist.length}</span>
               )}
             </span>
@@ -74,7 +74,7 @@ const Navbar = () => {
               onClick={() => navigate("/cart")}
             >
               <ShoppingBagOutlinedIcon className="nav-icon" />
-              {cart.length > 0 && isLoggedIn &&(
+              {cart.length > 0 && (
                 <span className="badge-cart">{cart.length}</span>
               )}
             </span>

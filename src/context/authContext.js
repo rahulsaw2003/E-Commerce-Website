@@ -1,12 +1,13 @@
 import { createContext, useContext, useReducer } from "react";
 
 import { toast } from "react-hot-toast";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { LOGIN, LOGOUT, loginService, signupService } from "utils";
 
 const AuthContext = createContext();
 const AuthProvider = ({ children }) => {
   const navigate = useNavigate();
+  const location = useLocation();
 
   const localStorageToken = JSON.parse(localStorage.getItem("loginDetails"));
   const initialState = {
@@ -60,12 +61,18 @@ const AuthProvider = ({ children }) => {
           payload: { user: createdUser, token: encodedToken },
         });
 
+        // Set flag for cart and wishlist to sync on next load
+        localStorage.setItem("shouldSyncGuestData", "true");
+
         toast.success(`${createdUser.firstName}!`, {
           icon: "👗",
           message: "Step into the glamorous realm of Attirex Fashion!",
           duration: 5000,
         });
-        navigate("/");
+
+        // Navigate to the page user was trying to access, or home
+        const from = location.state?.from?.pathname || "/";
+        navigate(from, { replace: true });
       }
     } catch (error) {
       console.log(error);
@@ -89,10 +96,17 @@ const AuthProvider = ({ children }) => {
           type: LOGIN,
           payload: { user: foundUser, token: encodedToken },
         });
+
+        // Set flag for cart and wishlist to sync on next load
+        localStorage.setItem("shouldSyncGuestData", "true");
+
         toast.success(`Welcome back, ${foundUser.firstName}!`, {
           icon: "👋",
         });
-        navigate("/");
+
+        // Navigate to the page user was trying to access, or home
+        const from = location.state?.from?.pathname || "/";
+        navigate(from, { replace: true });
       }
     } catch (error) {
       console.log(error);

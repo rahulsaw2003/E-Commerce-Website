@@ -42,17 +42,11 @@ const ProductCard = ({ product }) => {
 
   // Check if the product is in the wishlist
   const isFavorite =
-    isLoggedIn &&
     wishlist &&
     wishlist.find((wishlistProduct) => wishlistProduct._id === _id);
 
   const toggleWishlist = (e) => {
     e.stopPropagation();
-
-    if (!isLoggedIn) {
-      navigate("/login");
-      return;
-    }
 
     if (isFavorite) {
       removeFromWishlistHandler(_id);
@@ -71,10 +65,6 @@ const ProductCard = ({ product }) => {
 
   const toggleCart = (e) => {
     e.stopPropagation();
-    if (!isLoggedIn) {
-      navigate("/login");
-      return;
-    }
     addToCartHandler(product);
     toast.success(`${name} added to cart`);
   };

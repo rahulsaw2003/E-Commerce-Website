@@ -1,0 +1,88 @@
+-- Tech Products Seeding SQL Script
+-- Run this in Supabase SQL Editor to seed tech products
+-- This bypasses RLS policies
+
+-- First, create the tech categories (skip if they already exist)
+-- Note: Remove this section if categories already exist to avoid duplicates
+INSERT INTO categories (name, section, description, image)
+VALUES 
+  ('Smartphones', 'Electronics', 'Browse our collection of latest smartphones from top brands', 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400'),
+  ('Smartwatches', 'Electronics', 'Browse our collection of smartwatches and fitness trackers', 'https://images.unsplash.com/photo-1579586337278-3befd40fd17a?w=400'),
+  ('Earbuds & Headphones', 'Electronics', 'Browse our collection of earbuds, headphones, and audio accessories', 'https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=400'),
+  ('Tablets', 'Electronics', 'Browse our collection of tablets and e-readers', 'https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=400'),
+  ('Laptops', 'Electronics', 'Browse our collection of laptops and notebooks', 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=400');
+
+-- Insert smartphones (15 products)
+INSERT INTO products (_id, name, category, section, description, price, original_price, rating, image, is_trending, is_out_of_stock)
+VALUES
+  (gen_random_uuid(), 'iPhone 15 Pro Max', 'Smartphones', 'Electronics', 'The ultimate iPhone with titanium design, A17 Pro chip, and pro camera system. Features a stunning 6.7-inch Super Retina XDR display with ProMotion technology.', 129900, 149900, 4.8, 'https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=500', true, false),
+  (gen_random_uuid(), 'iPhone 15 Pro', 'Smartphones', 'Electronics', 'Forged in titanium with the powerful A17 Pro chip. 6.1-inch Super Retina XDR display with Always-On and ProMotion.', 114900, 134900, 4.7, 'https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=500', true, false),
+  (gen_random_uuid(), 'iPhone 15', 'Smartphones', 'Electronics', 'Dynamic Island, 48MP Main camera, and A16 Bionic chip. 6.1-inch Super Retina XDR display.', 79900, 89900, 4.6, 'https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=500', false, false),
+  (gen_random_uuid(), 'Samsung Galaxy S24 Ultra', 'Smartphones', 'Electronics', 'Galaxy AI is here. 200MP camera with Space Zoom, S Pen built-in, and titanium frame. 6.8-inch Dynamic AMOLED 2X display.', 124999, 139999, 4.7, 'https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=500', true, false),
+  (gen_random_uuid(), 'Samsung Galaxy S24+', 'Smartphones', 'Electronics', 'Premium Galaxy AI experience with 50MP camera and 6.7-inch display. Advanced Snapdragon 8 Gen 3 processor.', 89999, 99999, 4.6, 'https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=500', false, false),
+  (gen_random_uuid(), 'Samsung Galaxy S24', 'Smartphones', 'Electronics', 'Compact powerhouse with Galaxy AI, 50MP camera, and 6.2-inch FHD+ display. All-day battery life.', 74999, 79999, 4.5, 'https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=500', false, false),
+  (gen_random_uuid(), 'Google Pixel 8 Pro', 'Smartphones', 'Electronics', 'Google AI meets pro-level camera. 6.7-inch LTPO OLED display, Tensor G3 chip, and incredible computational photography.', 99999, 109999, 4.6, 'https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=500', true, false),
+  (gen_random_uuid(), 'Google Pixel 8', 'Smartphones', 'Electronics', 'The helpful Pixel with Google AI. 6.2-inch Actua display, amazing camera, and 7 years of updates.', 69999, 74999, 4.5, 'https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=500', false, false),
+  (gen_random_uuid(), 'OnePlus 12', 'Smartphones', 'Electronics', 'Flagship killer with Snapdragon 8 Gen 3, 50MP Hasselblad camera, and 100W SUPERVOOC charging. 6.82-inch AMOLED display.', 64999, 69999, 4.5, 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500', false, false),
+  (gen_random_uuid(), 'OnePlus 12R', 'Smartphones', 'Electronics', 'Value flagship with Snapdragon 8 Gen 2, 50MP camera, and 100W fast charging. 6.78-inch 120Hz display.', 42999, 45999, 4.4, 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500', false, false),
+  (gen_random_uuid(), 'Xiaomi 14 Ultra', 'Smartphones', 'Electronics', 'Photography beast with Leica quad camera system, Snapdragon 8 Gen 3, and 6.73-inch LTPO AMOLED display.', 79999, 89999, 4.6, 'https://images.unsplash.com/photo-1567581935884-3349723552ca?w=500', false, false),
+  (gen_random_uuid(), 'Nothing Phone 2', 'Smartphones', 'Electronics', 'Unique Glyph Interface, Snapdragon 8+ Gen 1, and pure Android experience. 6.7-inch LTPO AMOLED display.', 44999, 49999, 4.3, 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500', false, false),
+  (gen_random_uuid(), 'Samsung Galaxy A54 5G', 'Smartphones', 'Electronics', 'Mid-range powerhouse with 50MP OIS camera, 120Hz Super AMOLED display, and two-day battery life.', 38999, 42999, 4.3, 'https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=500', false, false),
+  (gen_random_uuid(), 'Motorola Edge 40', 'Smartphones', 'Electronics', 'Sleek design with curved 6.55-inch pOLED display, 68W TurboPower charging, and clean Android.', 29999, 34999, 4.2, 'https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=500', false, false),
+  (gen_random_uuid(), 'Realme GT 5 Pro', 'Smartphones', 'Electronics', 'Performance beast with Snapdragon 8 Gen 3, 50MP Sony IMX camera, and 240W fast charging.', 46999, 49999, 4.4, 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500', false, false);
+
+-- Insert smartwatches (10 products)
+INSERT INTO products (_id, name, category, section, description, price, original_price, rating, image, is_trending, is_out_of_stock)
+VALUES
+  (gen_random_uuid(), 'Apple Watch Series 9 (45mm)', 'Smartwatches', 'Electronics', 'Most advanced Apple Watch with S9 chip, double tap gesture, and precision finding. Bright Always-On Retina display.', 44900, 49900, 4.7, 'https://images.unsplash.com/photo-1579586337278-3befd40fd17a?w=500', true, false),
+  (gen_random_uuid(), 'Apple Watch Ultra 2', 'Smartwatches', 'Electronics', 'The most rugged and capable Apple Watch. Titanium case, action button, and up to 36 hours battery life.', 89900, 94900, 4.8, 'https://images.unsplash.com/photo-1579586337278-3befd40fd17a?w=500', true, false),
+  (gen_random_uuid(), 'Apple Watch SE (40mm)', 'Smartwatches', 'Electronics', 'Essential Apple Watch features at a great value. Fitness tracking, safety features, and seamless connectivity.', 27900, 29900, 4.5, 'https://images.unsplash.com/photo-1579586337278-3befd40fd17a?w=500', false, false),
+  (gen_random_uuid(), 'Samsung Galaxy Watch6 Classic', 'Smartwatches', 'Electronics', 'Premium design with rotating bezel, comprehensive health tracking, and 40-hour battery life.', 38999, 42999, 4.6, 'https://images.unsplash.com/photo-1617043786394-f977fa12eddf?w=500', false, false),
+  (gen_random_uuid(), 'Samsung Galaxy Watch6', 'Smartwatches', 'Electronics', 'Sleek smartwatch with advanced sleep tracking, body composition analysis, and personalized workouts.', 32999, 35999, 4.5, 'https://images.unsplash.com/photo-1617043786394-f977fa12eddf?w=500', false, false),
+  (gen_random_uuid(), 'Garmin Forerunner 265', 'Smartwatches', 'Electronics', 'Advanced running smartwatch with AMOLED display, training readiness, and up to 13 days battery life.', 46999, 49999, 4.7, 'https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=500', false, false),
+  (gen_random_uuid(), 'Fitbit Sense 2', 'Smartwatches', 'Electronics', 'Health-focused smartwatch with stress management tools, EDA sensor, and 6+ days battery life.', 24999, 27999, 4.3, 'https://images.unsplash.com/photo-1575311373937-040b8e1fd5b6?w=500', false, false),
+  (gen_random_uuid(), 'Amazfit GTR 4', 'Smartwatches', 'Electronics', 'Long-lasting smartwatch with 14-day battery, dual-band GPS, and 150+ sports modes.', 16999, 18999, 4.2, 'https://images.unsplash.com/photo-1557438159-51eec7a6c9e8?w=500', false, false),
+  (gen_random_uuid(), 'Noise ColorFit Pro 4', 'Smartwatches', 'Electronics', 'Budget-friendly smartwatch with 1.72" display, 100+ sports modes, and 7-day battery life.', 3499, 4999, 4.0, 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500', false, false),
+  (gen_random_uuid(), 'Fire-Boltt Ninja Call Pro Plus', 'Smartwatches', 'Electronics', 'Value smartwatch with Bluetooth calling, 1.83" HD display, and IP67 water resistance.', 2499, 3999, 3.9, 'https://images.unsplash.com/photo-1557438159-51eec7a6c9e8?w=500', false, false);
+
+-- Insert earbuds & headphones (12 products)
+INSERT INTO products (_id, name, category, section, description, price, original_price, rating, image, is_trending, is_out_of_stock)
+VALUES
+  (gen_random_uuid(), 'AirPods Pro (2nd Gen)', 'Earbuds & Headphones', 'Electronics', 'Adaptive Audio, active noise cancellation, and personalized spatial audio. Up to 6 hours listening time with ANC.', 24900, 26900, 4.7, 'https://images.unsplash.com/photo-1606841837239-c5a1a4a07af7?w=500', true, false),
+  (gen_random_uuid(), 'AirPods Max', 'Earbuds & Headphones', 'Electronics', 'Premium over-ear headphones with high-fidelity audio, adaptive EQ, and active noise cancellation. Up to 20 hours battery life.', 59900, 64900, 4.6, 'https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=500', false, false),
+  (gen_random_uuid(), 'AirPods (3rd Gen)', 'Earbuds & Headphones', 'Electronics', 'Personalized spatial audio with dynamic head tracking. Sweat and water resistant. Up to 6 hours listening time.', 19900, 21900, 4.5, 'https://images.unsplash.com/photo-1606841837239-c5a1a4a07af7?w=500', false, false),
+  (gen_random_uuid(), 'Samsung Galaxy Buds2 Pro', 'Earbuds & Headphones', 'Electronics', 'Intelligent 360-degree audio, enhanced ANC, and Hi-Fi sound quality. IPX7 water resistance.', 17999, 19999, 4.5, 'https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=500', false, false),
+  (gen_random_uuid(), 'Sony WF-1000XM5', 'Earbuds & Headphones', 'Electronics', 'Industry-leading noise cancellation in a smaller design. LDAC audio, 8-hour battery life, and AI-based noise reduction.', 24990, 26990, 4.7, 'https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=500', true, false),
+  (gen_random_uuid(), 'Sony WH-1000XM5', 'Earbuds & Headphones', 'Electronics', 'Flagship over-ear headphones with best-in-class noise cancellation, 30-hour battery, and premium sound quality.', 34990, 36990, 4.8, 'https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=500', true, false),
+  (gen_random_uuid(), 'Bose QuietComfort Earbuds II', 'Earbuds & Headphones', 'Electronics', 'Personalized noise cancellation, CustomTune sound calibration, and up to 6 hours battery life.', 26999, 28999, 4.6, 'https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=500', false, false),
+  (gen_random_uuid(), 'Beats Studio Buds+', 'Earbuds & Headphones', 'Electronics', 'Powerful, balanced sound with active noise cancelling. Transparency mode and up to 9 hours listening time.', 16999, 18999, 4.4, 'https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=500', false, false),
+  (gen_random_uuid(), 'JBL Tune 760NC', 'Earbuds & Headphones', 'Electronics', 'Over-ear wireless headphones with active noise cancelling and up to 50 hours battery life with ANC off.', 7999, 9999, 4.2, 'https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=500', false, false),
+  (gen_random_uuid(), 'OnePlus Buds Pro 2', 'Earbuds & Headphones', 'Electronics', 'Premium TWS with dual DAC audio, adaptive ANC, and 39-hour total battery life with case.', 11999, 12999, 4.3, 'https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=500', false, false),
+  (gen_random_uuid(), 'Nothing Ear (2)', 'Earbuds & Headphones', 'Electronics', 'Transparent design with 40dB ANC, personalized sound, and up to 36 hours total playback with case.', 8999, 9999, 4.2, 'https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=500', false, false),
+  (gen_random_uuid(), 'Realme Buds Air 5 Pro', 'Earbuds & Headphones', 'Electronics', 'Budget TWS with 50dB hybrid ANC, 11mm bass drivers, and 40-hour total battery life.', 4999, 5999, 4.0, 'https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=500', false, false);
+
+-- Insert tablets (8 products)
+INSERT INTO products (_id, name, category, section, description, price, original_price, rating, image, is_trending, is_out_of_stock)
+VALUES
+  (gen_random_uuid(), 'iPad Pro 12.9" (M2)', 'Tablets', 'Electronics', 'Ultimate iPad experience with M2 chip, Liquid Retina XDR display, and ProMotion technology. Professional creativity on the go.', 109900, 119900, 4.8, 'https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=500', true, false),
+  (gen_random_uuid(), 'iPad Air (M2)', 'Tablets', 'Electronics', 'Powerful M2 chip in a thin and light design. 10.9-inch Liquid Retina display with True Tone.', 64900, 69900, 4.7, 'https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=500', true, false),
+  (gen_random_uuid(), 'iPad (10th Gen)', 'Tablets', 'Electronics', 'Colorfully redesigned all-screen iPad with A14 Bionic chip. 10.9-inch Liquid Retina display.', 44900, 47900, 4.6, 'https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=500', false, false),
+  (gen_random_uuid(), 'iPad mini (6th Gen)', 'Tablets', 'Electronics', 'Portable powerhouse with A15 Bionic chip. 8.3-inch Liquid Retina display with True Tone and wide color.', 49900, 52900, 4.6, 'https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=500', false, false),
+  (gen_random_uuid(), 'Samsung Galaxy Tab S9 Ultra', 'Tablets', 'Electronics', 'Massive 14.6" Dynamic AMOLED 2X display, Snapdragon 8 Gen 2, S Pen included. Ultimate productivity tablet.', 104999, 109999, 4.7, 'https://images.unsplash.com/photo-1585790050230-5dd28404f511?w=500', false, false),
+  (gen_random_uuid(), 'Samsung Galaxy Tab S9+', 'Tablets', 'Electronics', 'Premium 12.4" AMOLED display, powerful performance, and S Pen included. IP68 water resistance.', 79999, 84999, 4.6, 'https://images.unsplash.com/photo-1585790050230-5dd28404f511?w=500', false, false),
+  (gen_random_uuid(), 'Samsung Galaxy Tab A9+', 'Tablets', 'Electronics', 'Affordable 11" tablet with quad speakers and long battery life. Perfect for entertainment.', 22999, 24999, 4.2, 'https://images.unsplash.com/photo-1585790050230-5dd28404f511?w=500', false, false),
+  (gen_random_uuid(), 'Lenovo Tab P11 Pro', 'Tablets', 'Electronics', '11.5" OLED display, Snapdragon 730G, quad JBL speakers. Great for media consumption.', 38999, 41999, 4.3, 'https://images.unsplash.com/photo-1585790050230-5dd28404f511?w=500', false, false);
+
+-- Insert laptops (10 products)
+INSERT INTO products (_id, name, category, section, description, price, original_price, rating, image, is_trending, is_out_of_stock)
+VALUES
+  (gen_random_uuid(), 'MacBook Pro 16" (M3 Max)', 'Laptops', 'Electronics', 'Ultimate pro laptop with M3 Max chip, stunning 16.2" Liquid Retina XDR display, and up to 22 hours battery life.', 349900, 369900, 4.9, 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=500', true, false),
+  (gen_random_uuid(), 'MacBook Pro 14" (M3 Pro)', 'Laptops', 'Electronics', 'Supercharged for pros with M3 Pro chip. 14.2" Liquid Retina XDR display and up to 18 hours battery.', 239900, 259900, 4.8, 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=500', true, false),
+  (gen_random_uuid(), 'MacBook Air 15" (M2)', 'Laptops', 'Electronics', 'Strikingly thin and fast with M2 chip. 15.3" Liquid Retina display and up to 18 hours battery life.', 134900, 144900, 4.7, 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=500', false, false),
+  (gen_random_uuid(), 'MacBook Air 13" (M2)', 'Laptops', 'Electronics', 'Lightweight and powerful with M2 chip. 13.6" Liquid Retina display and all-day battery life.', 114900, 124900, 4.7, 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=500', false, false),
+  (gen_random_uuid(), 'Dell XPS 15 (2024)', 'Laptops', 'Electronics', 'Premium Windows laptop with Intel Core i7-13700H, 15.6" OLED display, and NVIDIA RTX 4060.', 189999, 199999, 4.6, 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=500', false, false),
+  (gen_random_uuid(), 'Dell XPS 13 Plus', 'Laptops', 'Electronics', 'Ultra-portable with 13.4" OLED display, Intel Core i7, and futuristic design. Perfect for professionals.', 164999, 174999, 4.5, 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=500', false, false),
+  (gen_random_uuid(), 'HP Spectre x360 14', 'Laptops', 'Electronics', '2-in-1 convertible with Intel Core i7, 14" OLED touchscreen, and premium build quality.', 144999, 154999, 4.5, 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=500', false, false),
+  (gen_random_uuid(), 'Lenovo ThinkPad X1 Carbon Gen 11', 'Laptops', 'Electronics', 'Business ultrabook with Intel Core i7, 14" 2.8K display, and legendary ThinkPad keyboard.', 159999, 169999, 4.6, 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=500', false, false),
+  (gen_random_uuid(), 'ASUS ROG Zephyrus G14 (2024)', 'Laptops', 'Electronics', 'Compact gaming laptop with AMD Ryzen 9, NVIDIA RTX 4060, and 14" QHD+ 165Hz display.', 149999, 159999, 4.7, 'https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=500', true, false),
+  (gen_random_uuid(), 'MSI Katana 15', 'Laptops', 'Electronics', 'Budget gaming laptop with Intel Core i7, NVIDIA RTX 4050, and 15.6" 144Hz display.', 79999, 84999, 4.3, 'https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=500', false, false);

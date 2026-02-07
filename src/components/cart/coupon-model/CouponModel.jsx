@@ -20,7 +20,7 @@ const CouponModal = ({
       couponValue += 100;
     }
     if (festiveOffer) {
-      couponValue += 200;
+      couponValue += 500;
     }
 
     setCoupon(couponValue);
@@ -52,9 +52,9 @@ const CouponModal = ({
                     checked={festiveOffer}
                     onChange={() => setFestiveOffer(!festiveOffer)}
                   />
-                  Festive Offer
+                  Offer for Aryan's Pari
                 </label>
-                <p>Save ₹200 on orders and make your celebrations even more joyful.</p>
+                <p>Save ₹500 on orders and when you gift a dress to your Pari.</p>
               </div>
             </div>
             <div className="coupon-modal-actions">

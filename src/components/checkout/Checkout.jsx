@@ -81,7 +81,8 @@ const Checkout = () => {
       return;
     }
 
-    if (!isLoggedIn) {
+    // Disabled login requirement - allow checkout without login
+    /* if (!isLoggedIn) {
       // Save checkout state and redirect to login
       toast("Please login to complete your order");
       navigate("/login", {
@@ -102,7 +103,10 @@ const Checkout = () => {
     } else {
       // User is logged in, proceed with payment
       handleCheckout(selectedAddress, totalPrice);
-    }
+    } */
+
+    // Proceed with payment directly (no login required)
+    handleCheckout(selectedAddress, totalPrice);
   };
 
   return (

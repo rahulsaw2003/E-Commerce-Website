@@ -60,9 +60,10 @@ const Navbar = () => {
             <SearchIcon className="nav-icon" />
           </form>
           <div className="nav-icons-container">
-            <span className="nav-icons" onClick={() => navigate("/profile")}>
+            {/* Disabled profile/login functionality */}
+            {/* <span className="nav-icons" onClick={() => navigate("/profile")}>
               <PersonOutlineOutlinedIcon className="nav-icon" />
-            </span>
+            </span> */}
             <span className="nav-icons" onClick={() => navigate("/wishlist")}>
               <FavoriteBorderOutlinedIcon className="nav-icon" />
               {wishlist.length > 0 && (

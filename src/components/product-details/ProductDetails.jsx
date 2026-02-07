@@ -14,6 +14,7 @@ import {
   StarRoundedIcon,
 } from "assets";
 import { useAuth, useCart, useProductsData, useWishlist } from "context";
+import ProductReviews from "./ProductReviews";
 
 import "./productdetails.css";
 
@@ -135,6 +136,9 @@ const ProductDetails = () => {
           </div>
         </div>
       </div>
+
+      {/* Product Reviews Section */}
+      {product && <ProductReviews productId={product._id} />}
     </>
   );
 };

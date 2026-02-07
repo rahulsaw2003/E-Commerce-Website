@@ -15,12 +15,8 @@ import {
 import "./index.css";
 import "react-toastify/dist/ReactToastify.css";
 
-// App Component and Server
 import App from "./App";
-import { makeServer } from "./server";
 
-// Call make Server
-makeServer();
 
 ReactDOM.render(
   <React.StrictMode>

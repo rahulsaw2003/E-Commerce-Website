@@ -18,12 +18,18 @@ import {
   SignupForm,
   UserProfile,
 } from "components";
+import AdminLogin from "./components/admin/AdminLogin";
+import AdminDashboard from "./components/admin/AdminDashboard";
 import { Toaster } from "react-hot-toast";
 import { ScrollToTop } from "utils";
+import { useLocation } from "react-router-dom";
+
 function App() {
+  const location = useLocation();
+  const isAdminRoute = location.pathname.startsWith('/admin');
   return (
     <div className="App">
-      <Navbar />
+      {!isAdminRoute && <Navbar />}
       <ScrollToTop />
       <Toaster
         position="top-center"
@@ -47,6 +53,10 @@ function App() {
         <Route path="/signup" element={<SignupForm />} />
         <Route path="/login" element={<LoginForm />} />
 
+        {/* Admin routes */}
+        <Route path="/admin" element={<AdminLogin />} />
+        <Route path="/admin/dashboard" element={<AdminDashboard />} />
+
         {/* Guest users can access cart, wishlist, and checkout */}
         <Route path="/wishlist" element={<WishlistPage />} />
         <Route path="/cart" element={<CartPage />} />
@@ -58,7 +68,7 @@ function App() {
         </Route>
         <Route path="*" element={<Error />} />
       </Routes>
-      <Footer />
+      {!isAdminRoute && <Footer />}
     </div>
   );
 }

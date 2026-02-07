@@ -193,3 +193,101 @@
   background: rgba(255, 255, 255, 1);
   box-shadow: var(--shadow-lg);
 }
+
+/* Tablet Responsive Styles */
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+  .product-card {
+    width: 13rem;
+    margin: 0.5rem 1rem;
+  }
+
+  .product-card img {
+    height: 15rem;
+  }
+
+  .product-card-title {
+    font-size: 1.1rem;
+  }
+
+  .add-to-cart-btn {
+    font-size: 1rem;
+    padding: 0.45rem 0;
+  }
+}
+
+/* Mobile Responsive Styles */
+@media screen and (max-width: 768px) {
+  .product-section {
+    height: auto;
+    margin-top: 0;
+  }
+
+  .product-list {
+    max-height: none;
+    padding: 0.5rem;
+  }
+
+  .product-card {
+    width: calc(50% - 1rem);
+    margin: 0.5rem;
+    padding: 0.5rem;
+  }
+
+  .product-card img {
+    height: 12rem;
+  }
+
+  .product-card-title {
+    font-size: 1rem;
+  }
+
+  .product-card-description {
+    font-size: 0.8rem;
+  }
+
+  .product-card-price {
+    font-size: 0.9rem;
+  }
+
+  .add-to-cart-btn {
+    font-size: 0.9rem;
+    padding: 0.4rem 0;
+  }
+
+  .card-badge {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.8rem;
+  }
+
+  .whishlist-heart {
+    padding: 0.4rem;
+    top: 0.6rem;
+    right: 0.6rem;
+  }
+}
+
+/* Small Mobile (Portrait) */
+@media screen and (max-width: 480px) {
+  .product-card {
+    width: calc(100% - 1rem);
+    margin: 0.5rem;
+    max-width: 24rem;
+  }
+
+  .product-card img {
+    height: 16rem;
+  }
+
+  .product-card-title {
+    font-size: 1.1rem;
+  }
+
+  .product-card-description {
+    font-size: 0.85rem;
+  }
+
+  .add-to-cart-btn {
+    font-size: 1rem;
+    padding: 0.5rem 0;
+  }
+}

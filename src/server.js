@@ -89,6 +89,9 @@ export function makeServer({ environment = "development" } = {}) {
       // Allow external API calls to pass through
       this.passthrough("https://api.postalpincode.in/**");
       this.passthrough("https://nominatim.openstreetmap.org/**");
+
+      // Allow Supabase API calls to pass through for admin authentication
+      this.passthrough("https://qzmxiigimyexjnlrcwwz.supabase.co/**");
     },
   });
 }
